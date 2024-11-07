@@ -1,7 +1,7 @@
 <script setup>
   import { ref } from 'vue'
+  import { apiKey } from '@/key';
 
-  const apiKey = 'aed1af5ffbd74880bc3225608240311'
   const location = ref('')
 
   const temperatureC = ref(0)
@@ -11,7 +11,6 @@
   const cityTime = ref('cityTime')
   const country = ref('countryName')
   const locationArea = ref('locationArea')
-  var researchCompleted = false
 
   async function getWeather(location){
     var search = location
