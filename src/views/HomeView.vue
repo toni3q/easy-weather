@@ -6,11 +6,11 @@
 
   const temperatureC = ref(0)
   const temperatureF = ref(0)
-  const description = ref('description')
-  const cityName = ref('cityName')
-  const cityTime = ref('cityTime')
-  const country = ref('countryName')
-  const locationArea = ref('locationArea')
+  const description = ref('')
+  const cityName = ref('')
+  const cityTime = ref('')
+  const country = ref('')
+  const locationArea = ref('')
 
   async function getWeather(location){
     var search = location
@@ -19,6 +19,7 @@
     if(!response.ok){
       console.log('City not found.')
     } else{
+      document.getElementById('meteo').style.display = 'block';
       const data = await response.json();
       temperatureC.value = data.current.temp_c;
       temperatureF.value = data.current.temp_f;
